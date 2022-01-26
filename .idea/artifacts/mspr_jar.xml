@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="mspr:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mspr_jar</output-path>
+    <root id="archive" name="mspr.jar">
+      <element id="module-output" name="mspr" />
+    </root>
+  </artifact>
+</component>
