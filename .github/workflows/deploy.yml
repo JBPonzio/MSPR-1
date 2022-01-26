@@ -41,5 +41,5 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_PORT: 22
           TARGET: "mspr/"
-          SOURCE: "/out/artifacts/mspr_jar/mspr.jar"
+          SOURCE: "out/artifacts/mspr_jar/mspr.jar"
      
