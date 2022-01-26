@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Download files from git
         uses: actions/checkout@v2
-      - name: Set up JDK 14
+      - name: Set up JDK 17
         uses: actions/setup-java@v1
         with:
-         java-version: 14
+         java-version: 17
       - name: Build app
         run: mvn package --file pom.xml
       - name: Download project as artifact
