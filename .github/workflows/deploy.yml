@@ -37,7 +37,7 @@ jobs:
         run: sudo openvpn --config ".github/vpn/client.ovpn" --log "vpn.log" --daemon
       - name: Wait for a VPN connection
         timeout-minutes: 1
-        run: until ping -c1 your-server-address; do sleep 2; done
+        run: until ping -c1 172.16.89.41; do sleep 2; done
           
   deploy:
     runs-on: ubuntu-latest
