@@ -22,16 +22,6 @@ jobs:
         with:
           name: mspr
           path: out/artifacts/mspr_jar/mspr.jar
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@master
-        with:
-          name: mspr
-          path: out/artifacts/mspr_jar/mspr.jar
       - name: Install OpenVPN
         run: |
           sudo apt update
@@ -44,8 +34,18 @@ jobs:
           password: ${{ secrets.OVPN_PASSWORD }}
           client_key: ${{ secrets.OVPN_CLIENT_KEY }}
           tls_auth_key: ${{ secrets.OVPN_TLS_AUTH_KEY }}
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
 
-
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@master
+        with:
+          name: mspr
+          path: out/artifacts/mspr_jar/mspr.jar
+      
       - name: Deploy project with SSH
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
